@@ -1,6 +1,7 @@
 ## <p align="center"><ins>Horosim-Maze-Solver-Robot
-##### Superviseur:Prof Sébastien Rothhut
-###### Auteur: Youssef Miri && Daniel Wartski
+##### <ins>Superviseur:Prof Sébastien Rothhut
+##### <ins>Auteur: Youssef Miri && Daniel Wartski
+##### `La vitesse de simulation ne dois jamais etre très lente pour assurer un bon fonctionnement du programme.`
 ### <ins> Algorithme utilisé:
 
  
