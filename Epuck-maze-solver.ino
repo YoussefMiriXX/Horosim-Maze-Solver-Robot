@@ -190,7 +190,7 @@ void right(){  //si le robot est trop proche du mur de gauche ou si il détecte 
 }
 void left(){ //Le robot peut tourner vers la gauche si il s'éloigne trop du mur de gauche.
  custom_turn(1.17,0.83); 
- Serial.printn("left");
+ Serial.println("left");
 }
 
 //Cette fonction évalue le temps passé à capter de la couleur rouge ou noire pour déterminer si on an atteint la case rouge ou noire.
