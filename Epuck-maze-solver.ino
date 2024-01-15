@@ -14,7 +14,7 @@
 
 
 
-/////////////////////////////////////////////////Auteur: YOUSSEF MIRI && DANIEL //////////////////////////////////////////////////
+/////////////////////////////////////////////////Auteur: YOUSSEF MIRI && DANIEL Wartski //////////////////////////////////////////////////
 
 // PS:Pour l'algorithme de Retour, on préfère bien utiliser une matrice qui sauvegarde tous les mouvements effectués par le robot et puis on fait le chemin inverse.
 // On a consacrée beaucoup de temps pour trouver une solution pour le retour au lieu d'avoir un truc plus précis mais on a pas réussi à trouver une solution qui marche.
