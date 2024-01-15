@@ -173,15 +173,6 @@ void peu_RIGHT(){ //le robot avance en tournant un peu sur la droite
  custom_turn(1,1);
 Serial.println("peu_RIGHT");
 }
-
-void tres_peu_LEFT(){ //le robot avance en tournant très peu sur la gauche
- custom_turn(1.1,1);
- Serial.println("tres_peu_LEFT");
-}
-void tres_peu_RIGHT(){ //le robot avance en tournant très peu sur la droite
- custom_turn(1,1);
- Serial.println("tres_peu_RIGHT");
-}
 void right(){  //si le robot est trop proche du mur de gauche ou si il détecte un mur en face
  custom_turn(0.8,1.2);
   digitalWrite(MOTOR_RF_PIN, LOW);
@@ -258,7 +249,7 @@ bool suivmur=true; //cette variable sert à savoir si le robot va longer le mur 
 
 
 //Cette fonction teste si on a atteint la case rouge avant la noire en évaluant le temps passé à capter de la couleur rouge
-void finish_suivmur(){ 
+void finish_suiv_mur(){ 
   if (Rouge() && Black_detected_first){
     Time = millis();
    Black_detected_first=false;
@@ -278,8 +269,8 @@ void finish_suivmur(){
 //Cette fonction est responsable pour suivre les murs.
 void follow_wall() { 
   finish();
-  if ((!SecondTry)&&White_at_least_Once) //À chaque boucle après, la fonction finish_suivmur est testée avant d'atteindre au moins une case blanche.
-    finish_suivmur();
+  if ((!SecondTry)&&White_at_least_Once) //À chaque boucle après, la fonction finish_suiv_mur est testée avant d'atteindre au moins une case blanche.
+    finish_suiv_mur();
   if (millis()/1000 > 100)
     suivmur=false; //Si après 100 secondes, le robot n'a pas atteint la case rouge, il va changer de stratégie et va chercher la case en faisant des mouvements aléatoires.
   if (DL()==1){
@@ -393,13 +384,13 @@ void aleatoire() {
       else{
             if(L()==1&&R()==0){ // Le cas où le Left est activé mais le Right est pas activé, le robot va tourner à droite
               while (L()==1&&R()==0 &&!(FL()==1||FR()==1)){ // le cas où seulement le Left qui capte et tous les autres ne captent pas.
-                tres_peu_RIGHT();// tourne légèrement vers la droite
+                peu_RIGHT();// tourne légèrement vers la droite
                 finish();
               }
             }
             if(R()==1&&L()==0){ 
               while (R()==1&&L()==0 &&!(FL()==1||FR()==1)){ // Le cas inverse du précédent, le robot va tourner legerement vers la gauche
-                tres_peu_LEFT();
+                peu_LEFT();
                 finish();
               }
             }
